@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayFair ISS</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="brand">
+                <span>Playfair<strong>Cipher</strong></span>
+            </div>
+            <div class="nav-info">ISS Security Assignment • 2026</div>
+        </div>
+    </nav>
+
+    <main class="wrapper">
+        <section class="config-grid">
+            <div class="logic-info">
+                <span class="badge">Module 01</span>
+                <h1>Core Intelligence</h1>
+                <p>A symmetric-key substitution cipher that encrypts pairs of letters. It utilizes a 5×5 matrix created from a secret key to perform complex digraph shifts across rows and columns.</p>
+                
+                <div class="key-field">
+                    <label for="secretKey">SECRET CIPHER KEY</label>
+                    <input type="text" id="secretKey" value="" maxlength="25" spellcheck="false" placeholder="Enter your key">
+                </div>
+            </div>
+
+            <div class="matrix-viz">
+                <div class="viz-header">Matrix Engine</div>
+                <div id="matrixGrid" class="matrix-container"></div>
+            </div>
+        </section>
+
+        <section class="terminal-grid">
+            <div class="panel">
+                <div class="panel-top">
+                    <div class="status-dot green"></div>
+                    <span class="panel-title">Encryption Module</span>
+                </div>
+                <div class="panel-body">
+                    <div class="field-group">
+                        <label>PLAINTEXT INPUT</label>
+                        <textarea id="encryptInput" placeholder="Enter message to secure..."></textarea>
+                    </div>
+
+                    <div class="digraph-preview">
+                        <span class="label">Processing Digraphs:</span>
+                        <code id="encDigraphs">-- -- --</code>
+                    </div>
+
+                    <div class="field-group">
+                        <label>ENCRYPTED RESULT</label>
+                        <div class="output-row">
+                            <div class="output-box" id="encryptOutput">READY_</div>
+                            <button class="icon-btn" onclick="copyText('encryptOutput')" title="Copy Result">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-top">
+                    <div class="status-dot blue"></div>
+                    <span class="panel-title">Decryption Module</span>
+                </div>
+                <div class="panel-body">
+                    <div class="field-group">
+                        <label>CIPHERTEXT INPUT</label>
+                        <textarea id="decryptInput" placeholder="Enter code to decrypt..."></textarea>
+                    </div>
+
+                    <div class="digraph-preview">
+                        <span class="label">Processing Digraphs:</span>
+                        <code id="decDigraphs">-- -- --</code>
+                    </div>
+
+                    <div class="field-group">
+                        <label>DECRYPTED RESULT</label>
+                        <div class="output-row">
+                            <div class="output-box dec-color" id="decryptOutput">IDLE_</div>
+                            <button class="icon-btn" onclick="copyText('decryptOutput')" title="Copy Result">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        Design and Logic by <strong>Nitin Jain</strong>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
